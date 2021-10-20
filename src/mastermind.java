@@ -230,7 +230,6 @@ public class mastermind {
 			}
 			
 			IndicePion(Pion pionConcerne, Color couleurPion1Ordi,Color couleurPion2Ordi,Color couleurPion3Ordi,Color couleurPion4Ordi,Color couleurPion5Ordi, int positionX, int positionY, PremierPionBlanc monPremierPionBlanc){
-				this.couleurIndiceActuel = new Color(0,0,0,0);
 				this.boutonIndicePion = new BoutonRond("");
 				this.boutonIndicePion.setBounds(positionX, positionY, 9, 10);
 				this.boutonIndicePion.setVisible(false);
@@ -287,11 +286,11 @@ public class mastermind {
 
 			@SuppressWarnings("unused")
 			void donneIndice(int indiceNombreDEssaie){
-				IndicePion indicePion1 = new IndicePion(pion1,couleurPion1Ordi,couleurPion2Ordi,couleurPion3Ordi,couleurPion4Ordi,couleurPion5Ordi,215, 613 + indiceNombreDEssaie,monPremierPionBlanc);
-				IndicePion indicePion2 = new IndicePion(pion2,couleurPion2Ordi,couleurPion2Ordi,couleurPion3Ordi,couleurPion4Ordi,couleurPion5Ordi,235, 613 + indiceNombreDEssaie,monPremierPionBlanc);
-				IndicePion indicePion3 = new IndicePion(pion3,couleurPion3Ordi,couleurPion2Ordi,couleurPion3Ordi,couleurPion4Ordi,couleurPion5Ordi,235, 601 + indiceNombreDEssaie,monPremierPionBlanc);
-				IndicePion indicePion4 = new IndicePion(pion4,couleurPion4Ordi,couleurPion2Ordi,couleurPion3Ordi,couleurPion4Ordi,couleurPion5Ordi,215, 601 + indiceNombreDEssaie,monPremierPionBlanc);
-				IndicePion indicePion5 = new IndicePion(pion5,couleurPion5Ordi,couleurPion2Ordi,couleurPion3Ordi,couleurPion4Ordi,couleurPion5Ordi,225, 608 + indiceNombreDEssaie,monPremierPionBlanc);
+			    IndicePion indicePion1 = new IndicePion(pion1,couleurPion1Ordi,couleurPion2Ordi,couleurPion3Ordi,couleurPion4Ordi,couleurPion5Ordi,215, 613 + indiceNombreDEssaie,monPremierPionBlanc);
+				IndicePion indicePion2 = new IndicePion(pion2,couleurPion1Ordi,couleurPion2Ordi,couleurPion3Ordi,couleurPion4Ordi,couleurPion5Ordi,235, 613 + indiceNombreDEssaie,monPremierPionBlanc);
+				IndicePion indicePion3 = new IndicePion(pion3,couleurPion1Ordi,couleurPion2Ordi,couleurPion3Ordi,couleurPion4Ordi,couleurPion5Ordi,235, 601 + indiceNombreDEssaie,monPremierPionBlanc);
+				IndicePion indicePion4 = new IndicePion(pion4,couleurPion1Ordi,couleurPion2Ordi,couleurPion3Ordi,couleurPion4Ordi,couleurPion5Ordi,215, 601 + indiceNombreDEssaie,monPremierPionBlanc);
+				IndicePion indicePion5 = new IndicePion(pion5,couleurPion1Ordi,couleurPion2Ordi,couleurPion3Ordi,couleurPion4Ordi,couleurPion5Ordi,225, 608 + indiceNombreDEssaie,monPremierPionBlanc);
 			}
 		}
 		IndicePion indiceVide = new IndicePion(); // Permet d'utiliser la procédure donneIndice plus tard
