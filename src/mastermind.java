@@ -197,6 +197,11 @@ public class mastermind {
 			boolean estLePremierIndicePionBlancPourPion3Ordi;
 			boolean estLePremierIndicePionBlancPourPion4Ordi;
 			boolean estLePremierIndicePionBlancPourPion5Ordi;
+			boolean estLePremierIndicePionNoirPourPion1Ordi;
+			boolean estLePremierIndicePionNoirPourPion2Ordi;
+			boolean estLePremierIndicePionNoirPourPion3Ordi;
+			boolean estLePremierIndicePionNoirPourPion4Ordi;
+			boolean estLePremierIndicePionNoirPourPion5Ordi;
 
 			//Méthode
 			PremierPionBlanc(){
@@ -205,6 +210,11 @@ public class mastermind {
 				this.estLePremierIndicePionBlancPourPion3Ordi = true;
 				this.estLePremierIndicePionBlancPourPion4Ordi = true;
 				this.estLePremierIndicePionBlancPourPion5Ordi = true;
+				this.estLePremierIndicePionNoirPourPion1Ordi = true;
+				this.estLePremierIndicePionNoirPourPion2Ordi = true;
+				this.estLePremierIndicePionNoirPourPion3Ordi = true;
+				this.estLePremierIndicePionNoirPourPion4Ordi = true;
+				this.estLePremierIndicePionNoirPourPion5Ordi = true;
 			}
 
 			void setValeurInitial(){
@@ -213,6 +223,11 @@ public class mastermind {
 				this.estLePremierIndicePionBlancPourPion3Ordi = true;
 				this.estLePremierIndicePionBlancPourPion4Ordi = true;
 				this.estLePremierIndicePionBlancPourPion5Ordi = true;
+				this.estLePremierIndicePionNoirPourPion1Ordi = true;
+				this.estLePremierIndicePionNoirPourPion2Ordi = true;
+				this.estLePremierIndicePionNoirPourPion3Ordi = true;
+				this.estLePremierIndicePionNoirPourPion4Ordi = true;
+				this.estLePremierIndicePionNoirPourPion5Ordi = true;
 			}
 		}
 		PremierPionBlanc monPremierPionBlanc = new PremierPionBlanc();
@@ -222,75 +237,113 @@ public class mastermind {
 			//Attributs
 			BoutonRond boutonIndicePion;
 			Color couleurIndiceActuel;
-
+			int referencePionOrdi;
+			
 			//Méthodes
 			IndicePion(){
 				this.boutonIndicePion = new BoutonRond("");
 				this.couleurIndiceActuel = new Color(0,0,0,0);
+				referencePionOrdi = 0;
 			}
 			
 			IndicePion(Pion pionConcerne, Color couleurPion1Ordi,Color couleurPion2Ordi,Color couleurPion3Ordi,Color couleurPion4Ordi,Color couleurPion5Ordi, int positionX, int positionY, PremierPionBlanc monPremierPionBlanc){
 				this.boutonIndicePion = new BoutonRond("");
 				this.boutonIndicePion.setBounds(positionX, positionY, 9, 10);
 				this.boutonIndicePion.setVisible(false);
+				this.referencePionOrdi = 0;
 
-				if(pionConcerne.couleurActuel == couleurPion1Ordi && monPremierPionBlanc.estLePremierIndicePionBlancPourPion1Ordi == true ) {
+				if(pionConcerne.couleurActuel == couleurPion1Ordi && monPremierPionBlanc.estLePremierIndicePionBlancPourPion1Ordi == true && monPremierPionBlanc.estLePremierIndicePionNoirPourPion1Ordi ==true) {
 					this.couleurIndiceActuel = Color.WHITE;
 					this.boutonIndicePion.setVisible(true);
 					monPremierPionBlanc.estLePremierIndicePionBlancPourPion1Ordi = false;
+					this.referencePionOrdi = 1;
 				}
-				if(pionConcerne.couleurActuel == couleurPion2Ordi && monPremierPionBlanc.estLePremierIndicePionBlancPourPion2Ordi == true) {
+				if(pionConcerne.couleurActuel == couleurPion2Ordi && monPremierPionBlanc.estLePremierIndicePionBlancPourPion2Ordi == true && monPremierPionBlanc.estLePremierIndicePionNoirPourPion2Ordi ==true) {
 					this.couleurIndiceActuel = Color.WHITE;
 					this.boutonIndicePion.setVisible(true);
 					monPremierPionBlanc.estLePremierIndicePionBlancPourPion2Ordi = false;
+					this.referencePionOrdi = 2;
 				}
-				if(pionConcerne.couleurActuel == couleurPion3Ordi && monPremierPionBlanc.estLePremierIndicePionBlancPourPion3Ordi == true) {
+				if(pionConcerne.couleurActuel == couleurPion3Ordi && monPremierPionBlanc.estLePremierIndicePionBlancPourPion3Ordi == true && monPremierPionBlanc.estLePremierIndicePionNoirPourPion3Ordi ==true) {
 					this.couleurIndiceActuel = Color.WHITE;
 					this.boutonIndicePion.setVisible(true);
 					monPremierPionBlanc.estLePremierIndicePionBlancPourPion3Ordi = false;
+					this.referencePionOrdi = 3;
 				}
-				if(pionConcerne.couleurActuel == couleurPion4Ordi && monPremierPionBlanc.estLePremierIndicePionBlancPourPion4Ordi == true) {
+				if(pionConcerne.couleurActuel == couleurPion4Ordi && monPremierPionBlanc.estLePremierIndicePionBlancPourPion4Ordi == true && monPremierPionBlanc.estLePremierIndicePionNoirPourPion4Ordi ==true) {
 					this.couleurIndiceActuel = Color.WHITE;
 					this.boutonIndicePion.setVisible(true);
 					monPremierPionBlanc.estLePremierIndicePionBlancPourPion4Ordi = false;
+					this.referencePionOrdi = 4;
 				}
-				if(pionConcerne.couleurActuel == couleurPion5Ordi && monPremierPionBlanc.estLePremierIndicePionBlancPourPion5Ordi == true) {
+				if(pionConcerne.couleurActuel == couleurPion5Ordi && monPremierPionBlanc.estLePremierIndicePionBlancPourPion5Ordi == true && monPremierPionBlanc.estLePremierIndicePionNoirPourPion5Ordi ==true) {
 					this.couleurIndiceActuel = Color.WHITE;
 					this.boutonIndicePion.setVisible(true);
 					monPremierPionBlanc.estLePremierIndicePionBlancPourPion5Ordi = false;
+					this.referencePionOrdi = 5;
 				}
 				if((pionConcerne.couleurActuel == couleurPion1Ordi) && pionConcerne.numeroPion == 1) {
 					this.couleurIndiceActuel = Color.BLACK;
 					this.boutonIndicePion.setVisible(true);
+					monPremierPionBlanc.estLePremierIndicePionNoirPourPion1Ordi = false;
+					this.referencePionOrdi = 1;
 				}
 				if((pionConcerne.couleurActuel == couleurPion2Ordi) && pionConcerne.numeroPion == 2) {
 					this.couleurIndiceActuel = Color.BLACK;
 					this.boutonIndicePion.setVisible(true);
+					monPremierPionBlanc.estLePremierIndicePionNoirPourPion2Ordi = false;
+					this.referencePionOrdi = 2;
 				}
 				if((pionConcerne.couleurActuel == couleurPion3Ordi) && pionConcerne.numeroPion == 3) {
 					this.couleurIndiceActuel = Color.BLACK;
 					this.boutonIndicePion.setVisible(true);
+					monPremierPionBlanc.estLePremierIndicePionNoirPourPion3Ordi = false;
+					this.referencePionOrdi = 3;
 				}
 				if((pionConcerne.couleurActuel == couleurPion4Ordi) && pionConcerne.numeroPion == 4) {
 					this.couleurIndiceActuel = Color.BLACK;
 					this.boutonIndicePion.setVisible(true);
+					monPremierPionBlanc.estLePremierIndicePionNoirPourPion4Ordi = false;
+					this.referencePionOrdi = 4;
 				}
 				if((pionConcerne.couleurActuel == couleurPion5Ordi) && pionConcerne.numeroPion == 5) {
 					this.couleurIndiceActuel = Color.BLACK;
 					this.boutonIndicePion.setVisible(true);
+					monPremierPionBlanc.estLePremierIndicePionNoirPourPion5Ordi = false;
+					this.referencePionOrdi = 5;
 				}
 				this.boutonIndicePion.setBackground(this.couleurIndiceActuel);
 				fenetreJeu.getContentPane().add(this.boutonIndicePion);
 				this.boutonIndicePion.doClick();
 			}
 
-			@SuppressWarnings("unused")
+			void retirePionBlanc(IndicePion indicePion1,IndicePion indicePion2,IndicePion indicePion3,IndicePion indicePion4,IndicePion indicePion5) {
+				if(indicePion1.referencePionOrdi == indicePion2.referencePionOrdi && indicePion1.couleurIndiceActuel == Color.WHITE && indicePion2.couleurIndiceActuel == Color.BLACK) {
+					indicePion1.boutonIndicePion.setVisible(false);
+				}
+				if(indicePion1.referencePionOrdi == indicePion3.referencePionOrdi && indicePion1.couleurIndiceActuel == Color.WHITE && indicePion3.couleurIndiceActuel == Color.BLACK) {
+					indicePion1.boutonIndicePion.setVisible(false);
+				}
+				if(indicePion1.referencePionOrdi == indicePion4.referencePionOrdi && indicePion1.couleurIndiceActuel == Color.WHITE && indicePion4.couleurIndiceActuel == Color.BLACK) {
+					indicePion1.boutonIndicePion.setVisible(false);
+				}
+				if(indicePion1.referencePionOrdi == indicePion5.referencePionOrdi && indicePion1.couleurIndiceActuel == Color.WHITE && indicePion5.couleurIndiceActuel == Color.BLACK) {
+					indicePion1.boutonIndicePion.setVisible(false);
+				}
+			}
+			
 			void donneIndice(int indiceNombreDEssaie){
 			    IndicePion indicePion1 = new IndicePion(pion1,couleurPion1Ordi,couleurPion2Ordi,couleurPion3Ordi,couleurPion4Ordi,couleurPion5Ordi,215, 613 + indiceNombreDEssaie,monPremierPionBlanc);
 				IndicePion indicePion2 = new IndicePion(pion2,couleurPion1Ordi,couleurPion2Ordi,couleurPion3Ordi,couleurPion4Ordi,couleurPion5Ordi,235, 613 + indiceNombreDEssaie,monPremierPionBlanc);
 				IndicePion indicePion3 = new IndicePion(pion3,couleurPion1Ordi,couleurPion2Ordi,couleurPion3Ordi,couleurPion4Ordi,couleurPion5Ordi,235, 601 + indiceNombreDEssaie,monPremierPionBlanc);
 				IndicePion indicePion4 = new IndicePion(pion4,couleurPion1Ordi,couleurPion2Ordi,couleurPion3Ordi,couleurPion4Ordi,couleurPion5Ordi,215, 601 + indiceNombreDEssaie,monPremierPionBlanc);
 				IndicePion indicePion5 = new IndicePion(pion5,couleurPion1Ordi,couleurPion2Ordi,couleurPion3Ordi,couleurPion4Ordi,couleurPion5Ordi,225, 608 + indiceNombreDEssaie,monPremierPionBlanc);
+				retirePionBlanc(indicePion1,indicePion2,indicePion3,indicePion4,indicePion5);
+				retirePionBlanc(indicePion2,indicePion1,indicePion3,indicePion4,indicePion5);
+				retirePionBlanc(indicePion3,indicePion1,indicePion2,indicePion4,indicePion5);
+				retirePionBlanc(indicePion4,indicePion1,indicePion2,indicePion3,indicePion5);
+				retirePionBlanc(indicePion5,indicePion1,indicePion2,indicePion3,indicePion4);
+
 			}
 		}
 		IndicePion indiceVide = new IndicePion(); // Permet d'utiliser la procédure donneIndice plus tard
