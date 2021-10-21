@@ -318,23 +318,25 @@ public class mastermind {
 			}
 
 			void retirePionBlanc(IndicePion indicePionConcerne,IndicePion indicePion1,IndicePion indicePion2,IndicePion indicePion3,IndicePion indicePion4,IndicePion indicePion5) {
-				if(indicePionConcerne.referencePionOrdi == indicePion1.referencePionOrdi && indicePionConcerne.couleurIndiceActuel == Color.WHITE && indicePion1.couleurIndiceActuel == Color.BLACK) {
-					indicePionConcerne.boutonIndicePion.setVisible(false);
-				}
-				if(indicePionConcerne.referencePionOrdi == indicePion2.referencePionOrdi && indicePionConcerne.couleurIndiceActuel == Color.WHITE && indicePion2.couleurIndiceActuel == Color.BLACK) {
-					indicePionConcerne.boutonIndicePion.setVisible(false);
-				}
-				if(indicePionConcerne.referencePionOrdi == indicePion3.referencePionOrdi && indicePionConcerne.couleurIndiceActuel == Color.WHITE && indicePion3.couleurIndiceActuel == Color.BLACK) {
-					indicePionConcerne.boutonIndicePion.setVisible(false);
-				}
-				if(indicePionConcerne.referencePionOrdi == indicePion4.referencePionOrdi && indicePionConcerne.couleurIndiceActuel == Color.WHITE && indicePion4.couleurIndiceActuel == Color.BLACK) {
-					indicePionConcerne.boutonIndicePion.setVisible(false);
-				}
-				if(indicePionConcerne.referencePionOrdi == indicePion5.referencePionOrdi && indicePionConcerne.couleurIndiceActuel == Color.WHITE && indicePion5.couleurIndiceActuel == Color.BLACK) {
-					indicePionConcerne.boutonIndicePion.setVisible(false);
+				if(indicePionConcerne.couleurIndiceActuel == Color.WHITE) {
+					if(indicePionConcerne.referencePionOrdi == indicePion1.referencePionOrdi  && indicePion1.couleurIndiceActuel == Color.BLACK) {
+						indicePionConcerne.boutonIndicePion.setVisible(false);
+					}
+					else if(indicePionConcerne.referencePionOrdi == indicePion2.referencePionOrdi  && indicePion2.couleurIndiceActuel == Color.BLACK) {
+						indicePionConcerne.boutonIndicePion.setVisible(false);
+					}
+					else if(indicePionConcerne.referencePionOrdi == indicePion3.referencePionOrdi  && indicePion3.couleurIndiceActuel == Color.BLACK) {
+						indicePionConcerne.boutonIndicePion.setVisible(false);
+					}
+					else if(indicePionConcerne.referencePionOrdi == indicePion4.referencePionOrdi && indicePion4.couleurIndiceActuel == Color.BLACK) {
+						indicePionConcerne.boutonIndicePion.setVisible(false);
+					}
+					else if(indicePionConcerne.referencePionOrdi == indicePion5.referencePionOrdi && indicePion5.couleurIndiceActuel == Color.BLACK) {
+						indicePionConcerne.boutonIndicePion.setVisible(false);
+					}
 				}
 			}
-			
+
 			void donneIndice(int indiceNombreDEssaie){
 			    IndicePion indicePion1 = new IndicePion(pion1,couleurPion1Ordi,couleurPion2Ordi,couleurPion3Ordi,couleurPion4Ordi,couleurPion5Ordi,215, 613 + indiceNombreDEssaie,monPremierPionBlanc);
 				IndicePion indicePion2 = new IndicePion(pion2,couleurPion1Ordi,couleurPion2Ordi,couleurPion3Ordi,couleurPion4Ordi,couleurPion5Ordi,235, 613 + indiceNombreDEssaie,monPremierPionBlanc);
