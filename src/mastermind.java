@@ -317,18 +317,21 @@ public class mastermind {
 				this.boutonIndicePion.doClick();
 			}
 
-			void retirePionBlanc(IndicePion indicePion1,IndicePion indicePion2,IndicePion indicePion3,IndicePion indicePion4,IndicePion indicePion5) {
-				if(indicePion1.referencePionOrdi == indicePion2.referencePionOrdi && indicePion1.couleurIndiceActuel == Color.WHITE && indicePion2.couleurIndiceActuel == Color.BLACK) {
-					indicePion1.boutonIndicePion.setVisible(false);
+			void retirePionBlanc(IndicePion indicePionConcerne,IndicePion indicePion1,IndicePion indicePion2,IndicePion indicePion3,IndicePion indicePion4,IndicePion indicePion5) {
+				if(indicePionConcerne.referencePionOrdi == indicePion1.referencePionOrdi && indicePionConcerne.couleurIndiceActuel == Color.WHITE && indicePion1.couleurIndiceActuel == Color.BLACK) {
+					indicePionConcerne.boutonIndicePion.setVisible(false);
 				}
-				if(indicePion1.referencePionOrdi == indicePion3.referencePionOrdi && indicePion1.couleurIndiceActuel == Color.WHITE && indicePion3.couleurIndiceActuel == Color.BLACK) {
-					indicePion1.boutonIndicePion.setVisible(false);
+				if(indicePionConcerne.referencePionOrdi == indicePion2.referencePionOrdi && indicePionConcerne.couleurIndiceActuel == Color.WHITE && indicePion2.couleurIndiceActuel == Color.BLACK) {
+					indicePionConcerne.boutonIndicePion.setVisible(false);
 				}
-				if(indicePion1.referencePionOrdi == indicePion4.referencePionOrdi && indicePion1.couleurIndiceActuel == Color.WHITE && indicePion4.couleurIndiceActuel == Color.BLACK) {
-					indicePion1.boutonIndicePion.setVisible(false);
+				if(indicePionConcerne.referencePionOrdi == indicePion3.referencePionOrdi && indicePionConcerne.couleurIndiceActuel == Color.WHITE && indicePion3.couleurIndiceActuel == Color.BLACK) {
+					indicePionConcerne.boutonIndicePion.setVisible(false);
 				}
-				if(indicePion1.referencePionOrdi == indicePion5.referencePionOrdi && indicePion1.couleurIndiceActuel == Color.WHITE && indicePion5.couleurIndiceActuel == Color.BLACK) {
-					indicePion1.boutonIndicePion.setVisible(false);
+				if(indicePionConcerne.referencePionOrdi == indicePion4.referencePionOrdi && indicePionConcerne.couleurIndiceActuel == Color.WHITE && indicePion4.couleurIndiceActuel == Color.BLACK) {
+					indicePionConcerne.boutonIndicePion.setVisible(false);
+				}
+				if(indicePionConcerne.referencePionOrdi == indicePion5.referencePionOrdi && indicePionConcerne.couleurIndiceActuel == Color.WHITE && indicePion5.couleurIndiceActuel == Color.BLACK) {
+					indicePionConcerne.boutonIndicePion.setVisible(false);
 				}
 			}
 			
@@ -338,11 +341,11 @@ public class mastermind {
 				IndicePion indicePion3 = new IndicePion(pion3,couleurPion1Ordi,couleurPion2Ordi,couleurPion3Ordi,couleurPion4Ordi,couleurPion5Ordi,235, 601 + indiceNombreDEssaie,monPremierPionBlanc);
 				IndicePion indicePion4 = new IndicePion(pion4,couleurPion1Ordi,couleurPion2Ordi,couleurPion3Ordi,couleurPion4Ordi,couleurPion5Ordi,215, 601 + indiceNombreDEssaie,monPremierPionBlanc);
 				IndicePion indicePion5 = new IndicePion(pion5,couleurPion1Ordi,couleurPion2Ordi,couleurPion3Ordi,couleurPion4Ordi,couleurPion5Ordi,225, 608 + indiceNombreDEssaie,monPremierPionBlanc);
-				retirePionBlanc(indicePion1,indicePion2,indicePion3,indicePion4,indicePion5);
-				retirePionBlanc(indicePion2,indicePion1,indicePion3,indicePion4,indicePion5);
-				retirePionBlanc(indicePion3,indicePion1,indicePion2,indicePion4,indicePion5);
-				retirePionBlanc(indicePion4,indicePion1,indicePion2,indicePion3,indicePion5);
-				retirePionBlanc(indicePion5,indicePion1,indicePion2,indicePion3,indicePion4);
+				retirePionBlanc(indicePion1,indicePion1,indicePion2,indicePion3,indicePion4,indicePion5);
+				retirePionBlanc(indicePion2,indicePion1,indicePion2,indicePion3,indicePion4,indicePion5);
+				retirePionBlanc(indicePion3,indicePion1,indicePion2,indicePion3,indicePion4,indicePion5);
+				retirePionBlanc(indicePion4,indicePion1,indicePion2,indicePion3,indicePion4,indicePion5);
+				retirePionBlanc(indicePion5,indicePion1,indicePion2,indicePion3,indicePion4,indicePion5);
 
 			}
 		}
